@@ -5,15 +5,17 @@ import '../model/place.dart';
 
 class PlaceTile extends StatelessWidget {
   final Place place;
-  final
+  final int index;
 
-  const PlaceTile({super.key, required this.place});
+  const PlaceTile({super.key, required this.place, required this.index});
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title: Text(place.name),
-      leading: CircleAvatar(radius: 15, backgroundColor: Colors.lightBlue, child: Text(place.index),),
+      title: Text(place.name, style: TextStyle(fontSize: 19, color: Colors.lightBlue, fontWeight: FontWeight.bold),),
+      leading: CircleAvatar(radius: 24, backgroundColor: Colors.lightBlue,
+        child: Text("${index + 1 }", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),),),
+      trailing: Text("data"),
       onTap: (){
         // MaterialPageRoute route = MaterialPageRoute(builder: (ctx) => DetailPage(user: user));
         MaterialPageRoute route = MaterialPageRoute(builder: (ctx) => Center());

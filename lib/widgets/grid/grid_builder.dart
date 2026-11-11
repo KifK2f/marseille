@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:marseille/datas/data_source.dart';
 import 'package:marseille/model/place.dart';
-import 'package:marseille/widgets/page_card.dart';
+import 'package:marseille/widgets/place_card.dart';
 
 class GridBuilder extends StatelessWidget {
   const GridBuilder({super.key});
