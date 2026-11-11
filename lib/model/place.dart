@@ -10,5 +10,5 @@ class Place {
     required this.desc
   });
 
-  String getFolderPath() => "images/$imagePath.jpg";
+  String getFolderPath() => "assets/images/$imagePath.jpg";
 }
