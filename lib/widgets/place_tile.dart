@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:marseille/pages/detail_page.dart';
 
 import '../model/place.dart';
 
@@ -20,8 +21,7 @@ class PlaceTile extends StatelessWidget {
         child: Image.asset(place.getFolderPath(), fit: BoxFit.cover,),
       ),
       onTap: (){
-        // MaterialPageRoute route = MaterialPageRoute(builder: (ctx) => DetailPage(user: user));
-        MaterialPageRoute route = MaterialPageRoute(builder: (ctx) => Center());
+        MaterialPageRoute route = MaterialPageRoute(builder: (ctx) => DetailPage(place: place));
         Navigator.of(context).push(route);
       },
     );

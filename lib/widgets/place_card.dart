@@ -17,7 +17,7 @@ class PlaceCard extends StatelessWidget{
         child: Column(
           // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Image.asset(place.getFolderPath(), fit: BoxFit.cover, width: 379, height: 200,),
+            Image.asset(place.getFolderPath(), fit: BoxFit.cover, width: MediaQuery.of(context).size.width, height: 200,),
             const SizedBox(height: 10,),
             Text("${index + 1 } : ${place.name}", style: TextStyle(fontSize: 18, color: Colors.lightBlue, fontWeight: FontWeight.bold))
           ],
