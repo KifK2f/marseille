@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:marseille/model/place.dart';
+import 'package:marseille/widgets/grid/detail_page_paysage.dart';
+import 'package:marseille/widgets/list/detail_page_portrait.dart';
 
 
 class DetailPage extends StatelessWidget {
@@ -9,27 +11,17 @@ class DetailPage extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
+    Orientation orientation = MediaQuery.of(context).orientation;
     return Scaffold(
       appBar: AppBar(
         title: Text(place.name),
         backgroundColor: Colors.lightBlue,
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          // mainAxisSize: MainAxisSize.min,
-          children: [
-            SizedBox(
-            width: MediaQuery.of(context).size.width,
-            height: 300,
-            child: Image.asset(place.getFolderPath(), fit: BoxFit.cover,),
-          ),
-            Padding(
-              padding: const EdgeInsets.all(16),
-              child: Text(place.desc, style: TextStyle(fontSize: 18,),),
-            )
-          ],
-        ),
-      ),
+        body: (orientation == Orientation.portrait)
+            ? DetailPagePortrait(place: place)
+            : DetailPagePaysage(place: place)
+
+
     );
   }
 
