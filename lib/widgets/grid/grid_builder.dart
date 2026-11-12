@@ -13,11 +13,11 @@ class GridBuilder extends StatelessWidget {
     return GridView.builder(
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          childAspectRatio: 1.5
+          childAspectRatio: 1.5,
       ),
       itemCount: places.length, // limite le builder au nombre réel d'éléments
       itemBuilder: (context, index){
-        return PlaceCard(place: places[index]);
+        return PlaceCard(place: places[index],  index: index,);
       },
     );
   }
