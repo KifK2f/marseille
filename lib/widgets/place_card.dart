@@ -10,23 +10,17 @@ class PlaceCard extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Card(
-      // color: place.color.withValues(alpha: 0.7),
+      clipBehavior: Clip.antiAlias,
       margin: const EdgeInsets.all(12),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 12),
+
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            CircleAvatar(
-              radius: 34,
-              // backgroundColor: user.color,
-              child: Text("place.initial"),
-            ),
+            Image.asset(place.getFolderPath(), fit: BoxFit.cover, height: 200,),
             const SizedBox(height: 16,),
-            Text("place.fullName, style: Theme.of(context).textTheme.titleMedium")
+            Text(place.name, style: Theme.of(context).textTheme.titleMedium)
           ],
         ),
-      ),
     );
   }
 }

@@ -12,7 +12,7 @@ class GridBuilder extends StatelessWidget {
 
     return GridView.builder(
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 3,
+          crossAxisCount: 2,
           childAspectRatio: 1.5
       ),
       itemCount: places.length, // limite le builder au nombre réel d'éléments
